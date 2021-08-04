@@ -20,7 +20,7 @@
 
     & .big {
       & h1 {
-        font-family: "Roboto-Regular";
+        font-family: "Rubik-Light";
         font-size: 3.6rem;
         text-transform: capitalize;
         letter-spacing: 0.1rem;
@@ -32,7 +32,7 @@
       padding: 2rem;
       & h1 {
         text-align: center;
-        font-family: "Roboto-Regular";
+        font-family: "Rubik-Light";
         font-size: 1.6rem;
         text-transform: capitalize;
         letter-spacing: 0.1rem;
@@ -61,21 +61,21 @@
       & input {
         position: relative;
         width: 90%;
-        height: 90%;
+        height: 75%;
         border: none;
         box-shadow: inset 0rem 0.2rem 0.4rem rgba(#000, 0.4);
         border-radius: 0.4rem;
         background-color: rgba(#b8b0e0, 0.3);
         outline: none;
         text-indent: 1rem;
-        font-family: "Roboto-Regular";
+        font-family: "Rubik-Light";
         font-size: 2rem;
         padding-right: 13rem;
       }
 
       & button {
         width: 10rem;
-        height: 60%;
+        height: 55%;
         background: rgba(#403898, 0.6);
         border: none;
         box-shadow: 0rem 1rem 1rem rgba(#000, 0.4);
@@ -88,6 +88,10 @@
         text-transform: capitalize;
         color: #fff;
         font-family: "Poppins-Light";
+        &:active {
+          transform: scale(0.96);
+          box-shadow: 0rem 0.2rem 0.5rem rgba(#000, 0.4);
+        }
       }
     }
 
@@ -124,7 +128,7 @@
 
     & .large {
       & h1 {
-        font-family: "Roboto-Regular";
+        font-family: "Rubik-Light";
         font-size: 2.8rem;
         text-transform: capitalize;
         letter-spacing: 0.1rem;

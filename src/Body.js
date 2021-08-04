@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./sass/body.css"
 function Body() {
+    const [url, setUrl] = useState("")
+    function handleSubmit(e) {
+        e.preventDefault()
+        console.log(url);
+        setUrl("")
+    }
     return (
         <div className="body">
             <div className="intro">
@@ -10,8 +16,8 @@ function Body() {
             </div>
 
             <div className="inp">
-                <form action="">
-                    <input type="text" />
+                <form action="" onSubmit={handleSubmit}>
+                    <input type="text" value={url} onChange={(e) => { setUrl(e.target.value) }} />
                     <button>shorten</button>
                 </form>
                 {/* <div className="shortened">
@@ -19,7 +25,7 @@ function Body() {
                 </div> */}
             </div>
             <div className="outro">
-                <div className="large"><h1><span>urls</span> when shorter are better</h1></div>
+                <div className="large"><h1><span>urls,</span> when shorter are better</h1></div>
             </div>
         </div >
     )
