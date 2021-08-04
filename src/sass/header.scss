@@ -1,0 +1,59 @@
+.head {
+  position: relative;
+  width: 100%;
+  height: 6rem;
+  background-color: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  & .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 20%;
+    height: 100%;
+    & h1 {
+      color: #7070a8;
+      text-transform: uppercase;
+      font-family: "Courgette-Regular";
+      font-size: 3rem;
+      & span {
+        color: #000;
+      }
+    }
+  }
+
+  & .link {
+    position: relative;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & div {
+      position: relative;
+      padding: 0.6rem 1.3rem;
+      margin-right: 1rem;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      & h1 {
+        font-family: "Poppins-Light";
+        font-size: 1.9rem;
+        text-transform: capitalize;
+      }
+
+      &:hover,
+      &:active,
+      &:first-child {
+        background: linear-gradient(to right, #7070a8 90%, #000 90%);
+        background-clip: text;
+        -moz-background-clip: text;
+        border-bottom: 2px solid #7070a8;
+        & h1 {
+          color: transparent;
+        }
+      }
+    }
+  }
+}
