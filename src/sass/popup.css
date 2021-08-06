@@ -1,0 +1,118 @@
+.overlay {
+  position: fixed;
+  width: 100%;
+  z-index: 20;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  bottom: 0;
+  right: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.overlay .tab {
+  position: relative;
+  width: 40%;
+  height: 35vh;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0.5rem 0.4rem 2rem rgba(0, 0, 0, 0.4);
+          box-shadow: 0.5rem 0.4rem 2rem rgba(0, 0, 0, 0.4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.overlay .tab .end {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.overlay .tab .end button {
+  position: relative;
+  width: 4rem;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+}
+
+.overlay .tab .end button:hover {
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
+}
+
+.overlay .tab .end button:active {
+  -webkit-transform: scale(0.94);
+          transform: scale(0.94);
+}
+
+.overlay .tab .end button img {
+  position: relative;
+  width: 100%;
+}
+
+.overlay .tab .txt {
+  padding-right: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.overlay .tab .txt h1 {
+  font-size: 1.9rem;
+  text-transform: capitalize;
+  font-family: "Poppins-Light";
+}
+
+.overlay .tab .txt button {
+  margin-left: 2rem;
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  font-family: "Rubik-Light";
+  font-size: 1.6rem;
+  text-transform: capitalize;
+  background: rgba(64, 56, 152, 0.6);
+  border: none;
+  color: #fff;
+  border-radius: 0.2rem;
+}
+/*# sourceMappingURL=popup.css.map */

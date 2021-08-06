@@ -71,10 +71,13 @@
         font-family: "Rubik-Light";
         font-size: 2rem;
         padding-right: 13rem;
+        &.error {
+          border: 1px solid red;
+        }
       }
 
       & button {
-        width: 10rem;
+        width: 25%;
         height: 55%;
         background: rgba(#403898, 0.6);
         border: none;

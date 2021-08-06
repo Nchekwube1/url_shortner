@@ -1,12 +1,19 @@
 import Body from "./Body";
 import Head from "./Head";
+import Url from "./url";
+import { Switch, BrowserRouter as Router, Route } from "react-router-dom"
 import "./sass/app.css"
 function App() {
   return (
-    <div className="container">
-      <Head />
-      <Body />
-    </div>
+    <Router>
+      <div className="container">
+        <Head />
+        <Switch>
+          <Route path="/" exact component={Body} />
+          <Route path="/:id" component={Url} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

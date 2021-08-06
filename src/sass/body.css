@@ -110,8 +110,12 @@
   padding-right: 13rem;
 }
 
+.body .inp form input.error {
+  border: 1px solid red;
+}
+
 .body .inp form button {
-  width: 10rem;
+  width: 25%;
   height: 55%;
   background: rgba(64, 56, 152, 0.6);
   border: none;
