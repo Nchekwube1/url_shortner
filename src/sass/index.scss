@@ -11,3 +11,9 @@ body {
 html {
   font-size: 62.5%;
 }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+}
