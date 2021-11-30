@@ -2,9 +2,11 @@ import React, { useEffect } from "react";
 import "./sass/urls.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-
+type UrlParams = {
+  id: string;
+};
 function Url() {
-  const { id } = useParams();
+  const { id } = useParams<UrlParams>();
   useEffect(() => {
     axios.post(`http://localhost:5000/urls/${id}`).then((res) => {
       let newUrl = res.data;
