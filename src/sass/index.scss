@@ -2,15 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: novaslim;
 }
 body {
   width: 100%;
   background-color: #fff;
-  height: 100%;
+  min-height: 100vh;
 }
-html {
-  font-size: 62.5%;
-}
+
 @font-face {
   font-family: novaslim;
   src: url("../assets/novaslim.ttf");
@@ -28,10 +27,19 @@ html {
     font-family: comforter;
   }
   .back {
-    backgound-color: #303090;
+    background-color: #303090;
   }
-
+  .back-opa {
+    background-color: rgba(#303090, 0.2);
+  }
+  .body {
+    height: calc(100vh - 65px);
+    width: 100%;
+  }
   .color {
     color: #303090;
+  }
+  .modal {
+    background-color: rgba(#000, 0.2);
   }
 }

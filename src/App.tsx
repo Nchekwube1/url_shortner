@@ -6,7 +6,7 @@ import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 function App() {
   return (
     <Router>
-      <div className="relative container bg-black">
+      <div className="relative body">
         <Head />
         <Switch>
           <Route path="/" exact component={Body} />

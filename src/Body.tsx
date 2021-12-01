@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Popup from "./Popup";
-import "./sass/body.css";
 
 function Body() {
   const [url, setUrl] = useState("");
   const [err, setErr] = useState(false);
   const [modal, setModal] = useState(false);
   const [urlId, seturId] = useState("");
+  const setModalF = () => {
+    setModal(false);
+  };
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (url === "") {
@@ -32,42 +34,54 @@ function Body() {
     }
   }
   return (
-    <div className="body">
-      {modal ? <Popup id={urlId} modal={setModal} /> : null}
-      <div className="intro">
-        <div className="big">
-          <h1>create short links!</h1>
+    <div className="relative flex justify-start items-center py-3 flex-col w-full h-full">
+      {modal ? <Popup id={urlId} modal={setModalF} /> : null}
+      {/* <Popup id={urlId} modal={setModalF} /> */}
+      <div className="relative py-4 flex justify-center items-center flex-col w-full">
+        <div className="relative w-full py-2 flex justify-center items-center">
+          <h1 className="text-3xl color capitalize">create short links!</h1>
         </div>
-        <div className="small">
-          <h1>
-            <span>psylink</span> is the best url shortening service availble
-            completely free which is easily accessible and customisable{" "}
+        <div className="relative flex justify-center items-center w-full py-2 px-3">
+          <h1 className="text-xl capitalize">
+            <h1 className="color inline comforter">
+              psy<span className="text-black">link</span>
+            </h1>{" "}
+            is the best url shortening service availble completely free which is
+            easily accessible and customisable{" "}
           </h1>
         </div>
       </div>
 
-      <div className="inp">
-        <form action="" onSubmit={handleSubmit}>
+      <div className="py-2 my-3 flex justify-center items-center w-2/3 lg:w-2/5 rounded-sm shadow-md h-40 relative">
+        <form
+          className="flex justify-center items-center  w-full h-full relative"
+          onSubmit={handleSubmit}
+        >
           <input
             type="text"
-            className={err ? "error" : ""}
+            className={
+              err
+                ? "relative outline-none bg-red-200 h-11 rounded-sm text-base pl-1 w-3/5 capitalize inset-1"
+                : "relative outline-none back-opa h-11 rounded-sm text-base pl-1 w-3/5 capitalize inset-1"
+            }
             value={url}
+            placeholder="input a url to shorten"
             onChange={(e) => {
               setUrl(e.target.value);
             }}
           />
-          <button>shorten</button>
+          <button className="relative ml-2 back rounded-sm py-2 px-2 text-white">
+            shorten
+          </button>
         </form>
         {/* <div className="shortened">
                     <h1> <span>short url: </span> <button>bit.ly.asd</button></h1>
                 </div> */}
       </div>
-      <div className="outro">
-        <div className="large">
-          <h1>
-            <span>urls,</span> when shorter are better
-          </h1>
-        </div>
+      <div className="relative text-base capitalize">
+        <h1 className="text-base">
+          <span className="color">urls,</span> when shorter are better
+        </h1>
       </div>
     </div>
   );
