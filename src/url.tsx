@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import "./sass/urls.css";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 type UrlParams = {

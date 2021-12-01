@@ -1,12 +1,12 @@
 import Body from "./Body";
 import Head from "./Head";
 import Url from "./url";
-import { Switch, BrowserRouter as Router, Route } from "react-router-dom"
-import "./sass/app.css"
+import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+// import "./sass/app.css";
 function App() {
   return (
     <Router>
-      <div className="container">
+      <div className="relative container bg-black">
         <Head />
         <Switch>
           <Route path="/" exact component={Body} />

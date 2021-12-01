@@ -14,4 +14,29 @@ body {
 html {
   font-size: 62.5%;
 }
+
+@font-face {
+  font-family: novaslim;
+  src: url("../assets/novaslim.ttf");
+}
+
+@font-face {
+  font-family: comforter;
+  src: url("../assets/comforter.ttf");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .comforter {
+    font-family: comforter;
+  }
+  .back {
+    backgound-color: #303090;
+  }
+  .color {
+    color: #303090;
+  }
+}
 /*# sourceMappingURL=index.css.map */
