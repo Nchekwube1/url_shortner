@@ -6,6 +6,7 @@ function Body() {
   const [url, setUrl] = useState("");
   const [err, setErr] = useState(false);
   const [modal, setModal] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const [urlId, seturId] = useState("");
   const setModalF = () => {
     setModal(false);
@@ -19,13 +20,13 @@ function Body() {
       }, 3000);
     } else {
       const postObj = { full: url };
-
+      setModal(true);
       axios.post("http://localhost:5000/urls", postObj).then((res) => {
         if (res.status === 200) {
           let id = res.data.id;
           let loc = window.location.href;
           seturId(loc + id);
-          setModal(true);
+          setLoaded(true);
         } else {
           console.log("an error occured");
         }
@@ -35,8 +36,7 @@ function Body() {
   }
   return (
     <div className="relative flex justify-start items-center py-3 flex-col w-full h-full">
-      {modal ? <Popup id={urlId} modal={setModalF} /> : null}
-      {/* <Popup id={urlId} modal={setModalF} /> */}
+      {modal ? <Popup id={urlId} modal={setModalF} data={loaded} /> : null}
       <div className="relative py-4 flex justify-center items-center flex-col w-full">
         <div className="relative w-full py-2 flex justify-center items-center">
           <h1 className="text-3xl color capitalize">create short links!</h1>
@@ -61,8 +61,8 @@ function Body() {
             type="text"
             className={
               err
-                ? "relative outline-none bg-red-200 h-11 rounded-sm text-base pl-1 w-3/5 capitalize inset-1"
-                : "relative outline-none back-opa h-11 rounded-sm text-base pl-1 w-3/5 capitalize inset-1"
+                ? "relative outline-none bg-red-200 h-11 rounded-sm text-base pl-1 w-3/5 capitalize "
+                : "relative outline-none back-opa h-11 rounded-sm text-base pl-1 w-3/5 capitalize "
             }
             value={url}
             placeholder="input a url to shorten"
@@ -74,9 +74,6 @@ function Body() {
             shorten
           </button>
         </form>
-        {/* <div className="shortened">
-                    <h1> <span>short url: </span> <button>bit.ly.asd</button></h1>
-                </div> */}
       </div>
       <div className="relative text-base capitalize">
         <h1 className="text-base">

@@ -36,6 +36,12 @@ body {
     height: calc(100vh - 65px);
     width: 100%;
   }
+  .del-250 {
+    animation-delay: 0.25s;
+  }
+  .del-450 {
+    animation-delay: 0.5s;
+  }
   .color {
     color: #303090;
   }

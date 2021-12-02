@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Loading from "./Loading";
 type UrlParams = {
   id: string;
 };
@@ -12,11 +13,7 @@ function Url() {
       window.location.replace(newUrl);
     });
   }, [id]);
-  return (
-    <div>
-      <h1>Please wait ......</h1>
-    </div>
-  );
+  return <Loading />;
 }
 
 export default Url;
