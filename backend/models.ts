@@ -1,5 +1,5 @@
-const mongoose = require("mongoose")
-const schema = new mongoose.Schema({
+import mongoose,{Schema,Model} from "mongoose"
+const schema:Schema<any, Model<any, any, any, any>, any> = new Schema({
     _id: {
         type: mongoose.Types.ObjectId,
         required: true
@@ -13,5 +13,5 @@ const schema = new mongoose.Schema({
         required: true,
     }
 })
-
-module.exports = mongoose.model("url", schema)
+const model:Model<any, {}, {}, {}> = mongoose.model("url", schema)
+export default model
