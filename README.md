@@ -2,6 +2,9 @@
 
 A url_shortening service using mongoose to connect to mongodb database from an express server. Frontend created with react. Both server and client done with typescript
 
+<img src="./assets/pre.png"
+     alt="Preview"/>
+
 ## Run Locally
 
 Clone the project
