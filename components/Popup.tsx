@@ -1,5 +1,6 @@
+import Image from "next/image";
 import React from "react";
-import icon from "./assets/cancel.svg";
+import icon from "../public/cancel.svg";
 import Loading from "./Loading";
 interface prop {
   id: string;
@@ -17,7 +18,7 @@ function Popup({ id, modal, data }: prop) {
             }}
             className="relative w-7 h-7"
           >
-            <img src={icon} alt="cancel button" />
+            <Image src={icon} alt="cancel button" />
           </button>
         </div>
 

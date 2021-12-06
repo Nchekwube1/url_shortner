@@ -1,5 +1,5 @@
 import React from "react";
-function Head() {
+function Header() {
   return (
     <header className="w-full h-12 py-4 mb-4 flex justify-start items-center">
       <div className="relative px-3 ">
@@ -11,4 +11,4 @@ function Head() {
   );
 }
 
-export default Head;
+export default Header;

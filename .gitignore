@@ -9,6 +9,7 @@ backend/node_modules/
 /backend/.env/
 backend/.env/
 /.pnp
+.next/
 .pnp.js
 
 # testing
