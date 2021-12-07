@@ -21,8 +21,9 @@ async function dbConnect () {
   }
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGO_URI, { keepAlive: true }).then(mongoose => {
-      return mongoose
+    cached.promise = mongoose.connect(MONGO_URI, { keepAlive: true }).then(client => {
+      return client
+    
     })
   }
 

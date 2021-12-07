@@ -29,11 +29,11 @@ const App = () => {
       const postObj = { full: url };
       setModal(true);
       axios.post("http://localhost:3000/api/shorten", postObj).then((res) => {
-        if (res.status === 200) {
+        if (res.status === 201) {
+          console.log(res);
           let id = res.data.id;
-          // let loc = window.location.href;
-          // seturId(loc + id);
-          setModal(true);
+          let loc = window.location.href;
+          seturId(loc + id);
           setLoaded(true);
         } else {
           console.log("an error occured");

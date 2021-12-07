@@ -13,6 +13,6 @@ const schema:Schema<any, Model<any, any, any, any>, any> = new Schema({
         required: true,
     }
 })
-const Url:Model<any, {}, {}, {}> = mongoose.model("url", schema)
+// const Url:Model<any, {}, {}, {}> = mongoose.model("url", schema)
 
-module.exports = mongoose.models.url || Url
+export default mongoose.models.url ||  mongoose.model("url", schema)
