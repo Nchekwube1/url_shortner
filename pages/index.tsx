@@ -28,7 +28,7 @@ const App = () => {
     } else {
       const postObj = { full: url };
       setModal(true);
-      axios.post("http://localhost:3000/api/shorten", postObj).then((res) => {
+      axios.post("/api/shorten", postObj).then((res) => {
         if (res.status === 201) {
           console.log(res);
           let id = res.data.id;
