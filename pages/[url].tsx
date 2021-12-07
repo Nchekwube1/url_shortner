@@ -1,29 +1,15 @@
-import React, { useEffect } from "react";
-import { useRouter } from "next/router";
+import React from "react";
 import Head from "next/head";
 import { GetServerSideProps, InferGetServerSidePropsType } from "next";
-import axios from "axios";
-import { useParams } from "react-router-dom";
+import { dbConnect } from "../util/connection";
 import Loading from "../components/Loading";
-type UrlParams = {
-  id: string;
-};
 function Url({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  const router = useRouter();
-  const { id } = router.query;
-  // const { id } = useParams<UrlParams>();
-  // useEffect(() => {
-  //   axios.post(`http://localhost:5000/urls/${id}`).then((res) => {
-  //     let newUrl = res.data;
-  //     window.location.replace(newUrl);
-  //   });
-  // }, [id]);
   return (
     <>
       <Head>
         <title>Redirect</title>
         <meta name="description" content="Psylink Redirectiing..." />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="" />
       </Head>
       {data === null ? (
         <h1>
@@ -38,22 +24,22 @@ function Url({ data }: InferGetServerSidePropsType<typeof getServerSideProps>) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   let data;
-  const { url } = context.query;
+  const { url } = context.params;
 
   try {
-    data = null;
-
+    const { db } = await dbConnect();
+    data = await db.collection("urls").findOne({ short: url });
     return {
       props: { data: JSON.stringify(data), url: url },
+      redirect: {
+        destination: data !== "null" ? data.full : "",
+        permanent: false,
+      },
     };
   } catch (error) {
     data = null;
     return {
       props: { data: JSON.stringify(data), url: url },
-      //       redirect: {
-      //   destination: data !== "null" ? data.url : "",
-      //   permanent: false,
-      // },
     };
   }
 };
