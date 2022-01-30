@@ -4,3 +4,6 @@ import Global = NodeJS.Global;
 export interface myGlobal extends Global {
   mongo: any;
 }
+interface test{
+  test:any
+}
